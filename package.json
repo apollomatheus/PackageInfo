@@ -1,7 +1,7 @@
 {
-  "name": "FluentMod",
+  "name": "PluginTest",
   "version": "0.0.21",
-  "description": "A Fluent Design UI changer.",
-  "author": "Marc Espín",
-  "css":["main.css"]
+  "description": "PluginTest",
+  "author": "Apollo",
+  "main":"index.js"
 }
