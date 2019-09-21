@@ -29,8 +29,8 @@ const formatCode = function () {
 async function loopTest() {
       const delay = setTimeout(() => {
         formatCode();
+        await loopTest();
       },1000);
-    loopTest();
 };
 
-loopTest();
+await loopTest();
