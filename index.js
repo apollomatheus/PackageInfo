@@ -1,5 +1,5 @@
 
-const extension = '.vue'; 
+const styleExtension = '.vue'; 
 const plugin = new Plugin({
     name: "PluginTest"
 });
@@ -9,7 +9,7 @@ const checkFileName = function () {
     var f = filename?filename.length>0?filename.split('\\'):null:null;
     if (f && f.length > 0) {
       f = f[f.length-1];
-      if (f.split(extension).length > 1) {
+      if (f.split(styleExtension).length > 1) {
         return true;
       }
     }
@@ -18,7 +18,6 @@ const checkFileName = function () {
 
 const formatCode = function () {
       if (!checkFileName()) return;
-      console.log(fs);
       fs.readFile(filepath,
           "utf8",
           function(err, data) {
@@ -27,9 +26,11 @@ const formatCode = function () {
       );
 };
 
-async function loopTest(){
+async function loopTest() {
       const delay = setTimeout(() => {
         formatCode();
       },1000);
     loopTest();
-});
+};
+
+loopTest();
