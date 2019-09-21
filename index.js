@@ -1,11 +1,10 @@
 
-function(()=>{
-  const extension = '.vue'; 
-  const plugin = new Plugin({
+const extension = '.vue'; 
+const plugin = new Plugin({
     name: "PluginTest"
-  });
+});
   
-  const checkFileName = function () {
+const checkFileName = function () {
     const filename = filepath;
     var f = filename?filename.length>0?filename.split('\\'):null:null;
     if (f && f.length > 0) {
@@ -15,22 +14,22 @@ function(()=>{
       }
     }
     return false;
-  };
+};
 
-  const formatCode = function () {
+const formatCode = function () {
       if (!checkFileName()) return;
+      console.log(fs);
       fs.readFile(filepath,
           "utf8",
           function(err, data) {
               console.log(data);
           }
-      });
-  } 
+      );
+};
 
-  async function loopTest(){
+async function loopTest(){
       const delay = setTimeout(() => {
         formatCode();
       },1000);
     loopTest();
-  })
-}());
+});
