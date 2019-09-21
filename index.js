@@ -33,4 +33,4 @@ async function loopTest() {
       },1000);
 };
 
-await loopTest();
+loopTest();
