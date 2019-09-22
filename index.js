@@ -13,11 +13,11 @@ var git_package_error;
 const pushGitPackageFile = function (repoUrl,cb) {
   if (!cb) return false;
   var req = new XMLHttpRequest();
-  xn.open('get','https://raw.githubusercontent.com/'+url+'/master/package.json');
-  xn.onload = function(res){
+  req.open('get','https://raw.githubusercontent.com/'+url+'/master/package.json');
+  req.onload = function(res){
     cb(res.target);
   };
-  xn.send();
+  req.send();
   return true;
 };
 
