@@ -1,3 +1,4 @@
+"use strict"
 
 const plugin = new Plugin({
     name: "Package-Info"
@@ -112,6 +113,7 @@ const mountPackageDetails = function() {
   if (!git_package_config || !git_package_config.url) return;
   var repo = git_package_config.url.split('https://github.com/')[1];
   pushGitPackageFile(repo,(res)=>{
+    console.log(res);
     if (res.status == 200) {
       try {
         var j = JSON.parse(res.responseText);
@@ -122,7 +124,7 @@ const mountPackageDetails = function() {
   });
 }
 
-plugin_menu .setList({
+plugin_menu.setList({
   "button": "Package (GIT)",
   "list":{
      "Show package info":{
