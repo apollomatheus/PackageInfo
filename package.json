@@ -1,7 +1,7 @@
 {
   "name": "PackageInfo",
   "version": "0.0.21",
-  "description": "Package-Info",
+  "description": "Plugin to gather npm packages information in GIT.",
   "author": "Apollo",
   "main":"index.js"
 }
