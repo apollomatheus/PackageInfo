@@ -1,7 +1,7 @@
 {
-  "name": "PluginTest",
+  "name": "Package-Info",
   "version": "0.0.21",
-  "description": "PluginTest",
+  "description": "Package-Info",
   "author": "Apollo",
   "main":"index.js"
 }
