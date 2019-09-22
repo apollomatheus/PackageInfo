@@ -151,7 +151,6 @@ plugin_test.getData(function(data){
       }
     });
   }
-  loadGitFiles();
 });
 
 
