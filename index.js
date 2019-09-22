@@ -1,7 +1,7 @@
 "use strict"
 
 const plugin_test = new Plugin({
-    name: "Package-Info"
+    name: "PackageInfo"
 });
   
 const plugin_menu = new dropMenu({
