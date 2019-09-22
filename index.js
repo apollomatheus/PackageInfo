@@ -10,7 +10,7 @@ const plugin_menu = new dropMenu({
 var git_package_config;
 var git_package_error;
 
-const pushGitPackageFile = function (repoUrl,cb) {
+const pushGitPackageFile = function (url,cb) {
   if (!cb) return false;
   var req = new XMLHttpRequest();
   req.open('get','https://raw.githubusercontent.com/'+url+'/master/package.json');
@@ -109,7 +109,7 @@ const loadGitFiles = function () {
 
 const mountPackageDetails = function() {
   if (git_package_error) return;
-  if (!git_package_config.url) return;
+  if (!git_package_config || !git_package_config.url) return;
   var repo = git_package_config.url.split('https://github.com/')[1];
   pushGitPackageFile(repo,(res)=>{
     if (res.status == 200) {
